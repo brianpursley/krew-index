@@ -1,0 +1,19 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: waitjob
+spec:
+  version: v0.1.0
+  homepage: https://github.com/brianpursley/kubectl-waitjob
+  shortDescription: Waits for a job to complete or fail
+  description: |
+    Waits for a job to complete or fail, exiting with a 
+    status of 0 if the job completes successfully, or 1
+    if the job fails.
+  platforms:
+  - selector:
+      matchExpressions:
+      - {key: os, operator: In, values: [darwin, linux]}
+    uri: https://github.com/brianpursley/kubectl-waitjob/releases/download/v0.1.0/kubectl-waitjob.tar.gz
+    sha256: d8dfde54770d52e4c84145f661d7e4d7a031d856ba0acddd8ed78a4aa36b0b85
+    bin: kubectl-waitjob
